@@ -36,7 +36,7 @@ Component({
   },
 
   observers: {
-    'editData': function(editData) {
+    editData: function (editData) {
       if (editData && this.data.mode === 'edit') {
         this.setData({
           activeType: editData.type || 'expense',
@@ -85,7 +85,7 @@ Component({
 
     onAmountChange(event) {
       let value = event.detail;
-      
+
       // 限制小数点后最多2位
       if (value.includes('.')) {
         const parts = value.split('.');
@@ -93,7 +93,7 @@ Component({
           value = parts[0] + '.' + parts[1].substring(0, 2);
         }
       }
-      
+
       this.setData({
         amount: value
       });
@@ -136,8 +136,7 @@ Component({
           billType: this.data.activeType,
           amount: parseFloat(this.data.amount),
           category: this.data.selectedCategory,
-          remark: this.data.remark,
-          createTime: this.data.selectedDate
+          remark: this.data.remark
         }
       };
 
@@ -146,26 +145,30 @@ Component({
         functionData.data.billId = this.data.editData.id;
       }
 
-      wx.cloud.callFunction(functionData).then(res => {
-        console.log(`${isEdit ? '编辑' : '创建'}账单成功:`, res);
-        if (res.result.success) {
-          Notify({ type: 'success', message: `账单${isEdit ? '编辑' : '创建'}成功` });
-          // 触发成功事件，让父组件刷新列表
-          this.triggerEvent(isEdit ? 'updated' : 'created');
-          // 关闭弹窗
-          this.triggerEvent('close');
-          // 重置表单
-          this.resetForm();
-        } else {
-          Notify({ type: 'danger', message: res.result.message || `${isEdit ? '编辑' : '创建'}失败` });
-        }
-      }).catch(err => {
-        console.error(`${isEdit ? '编辑' : '创建'}账单失败:`, err);
-        Notify({ type: 'danger', message: '网络错误，请重试' });
-      }).finally(() => {
-        // 无论成功失败都要关闭loading
-        this.setData({ loading: false });
-      });
+      wx.cloud
+        .callFunction(functionData)
+        .then(res => {
+          console.log(`${isEdit ? '编辑' : '创建'}账单成功:`, res);
+          if (res.result.success) {
+            Notify({ type: 'success', message: `账单${isEdit ? '编辑' : '创建'}成功` });
+            // 触发成功事件，让父组件刷新列表
+            this.triggerEvent(isEdit ? 'updated' : 'created');
+            // 关闭弹窗
+            this.triggerEvent('close');
+            // 重置表单
+            this.resetForm();
+          } else {
+            Notify({ type: 'danger', message: res.result.message || `${isEdit ? '编辑' : '创建'}失败` });
+          }
+        })
+        .catch(err => {
+          console.error(`${isEdit ? '编辑' : '创建'}账单失败:`, err);
+          Notify({ type: 'danger', message: '网络错误，请重试' });
+        })
+        .finally(() => {
+          // 无论成功失败都要关闭loading
+          this.setData({ loading: false });
+        });
     },
 
     resetForm() {

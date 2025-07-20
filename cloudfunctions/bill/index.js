@@ -40,7 +40,6 @@ async function createBill(event, context) {
       amount: parseFloat(amount),
       category: category,
       remark: remark || '',
-      date: new Date(date),
       createTime: db.serverDate(),
       updateTime: db.serverDate()
     };
