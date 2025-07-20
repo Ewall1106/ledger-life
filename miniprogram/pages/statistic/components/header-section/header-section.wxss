@@ -1,0 +1,62 @@
+.header-section {
+  background: #62b37a;
+  color: white;
+  padding: 40rpx 30rpx 60rpx;
+  position: relative;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.date-text {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.tab-buttons {
+  display: flex;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25rpx;
+  padding: 6rpx;
+}
+
+.tab-button {
+  padding: 12rpx 24rpx;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 20rpx;
+  transition: all 0.2s;
+}
+
+.tab-button.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #62b37a;
+  font-weight: 500;
+}
+
+.total-amount {
+  text-align: left;
+}
+
+.amount-label {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 10rpx;
+}
+
+.amount-value {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: white;
+} 

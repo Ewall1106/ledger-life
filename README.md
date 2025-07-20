@@ -1,2 +1,7 @@
-# ledger-life
-使用AI编程开发的记账小程序 A note-taking mini-program developed with AI coding.
+## ledger-life
+
+ledger-life 记账小程序
+
+## 参考文档
+
+- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)

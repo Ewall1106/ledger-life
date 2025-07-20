@@ -1,0 +1,66 @@
+<view class="container">
+  <summary-header
+    currentMonth="{{currentMonth}}"
+    totalExpense="{{totalExpense}}"
+    totalIncome="{{totalIncome}}"
+    selectedDate="{{selectedDate}}"
+    bind:monthchange="onMonthChange"
+  />
+  <!-- Transaction List -->
+  <view class="transaction-list">
+    <block wx:if="{{transactions.length === 0 && !loading}}">
+      <van-empty image="search" description="本月无账单记录" />
+    </block>
+    <block wx:else>
+      <view class="transaction-group" wx:for="{{transactions}}" wx:key="dateKey">
+        <van-cell-group inset>
+          <view class="date-header">
+            <view class="date-info">
+              <text class="date">{{item.date}}</text>
+              <text class="date-label">{{item.dateLabel}}</text>
+            </view>
+            <view class="daily-summary">
+              <text class="expense">出 {{item.dailyExpense}}</text>
+              <text class="income">入 {{item.dailyIncome}}</text>
+            </view>
+          </view>
+
+          <van-cell
+            wx:for="{{item.items}}"
+            wx:for-item="transaction"
+            wx:key="time"
+            is-link
+            data-transaction="{{transaction}}"
+            bind:tap="onTransactionTap"
+          >
+            <view slot="icon" class="item-icon {{transaction.icon}}">
+              <van-icon name="{{transaction.icon}}" size="20" color="white" />
+            </view>
+            <view slot="title" class="cell-title">
+              <view class="category-row">
+                <view class="category">{{transaction.category}}</view>
+                <view class="amount {{transaction.amount < 0 ? 'expense' : 'income'}}">
+                  {{transaction.amount < 0 ? '' : '+'}}{{transaction.amount}}
+                </view>
+              </view>
+              <view class="item-details">
+                <text class="time">{{transaction.time}}</text>
+                <text class="separator">|</text>
+                <text class="description">{{transaction.description}}</text>
+              </view>
+            </view>
+          </van-cell>
+        </van-cell-group>
+      </view>
+    </block>
+  </view>
+
+  <van-toast id="van-toast" />
+  <van-notify id="van-notify" />
+
+  <!-- Floating Action Button -->
+  <van-button class="fab" type="default" round bind:tap="onAddTransaction" icon="plus"> 记一笔 </van-button>
+
+  <!-- Add Record Component -->
+  <add-record show="{{ showAddRecord }}" bind:close="onAddRecordClose" bind:created="onAddRecordCreated" />
+</view>

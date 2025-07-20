@@ -1,0 +1,76 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.detail-content {
+  background: #fff;
+  border-radius: 24rpx;
+  margin: 24rpx 24rpx 0 24rpx;
+  box-shadow: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+  padding: 40rpx 32rpx 24rpx 32rpx;
+}
+
+.amount-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.category-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.category-icon {
+  margin-right: 12rpx;
+}
+
+.category-name {
+  font-size: 32rpx;
+  color: #333;
+  margin-right: 8rpx;
+}
+
+.amount-display {
+  margin-top: 8rpx;
+}
+
+.amount-text {
+  font-size: 68rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.detail-info {
+  margin-top: 32rpx;
+}
+
+.detail-info .van-cell {
+  padding: 24rpx 0;
+}
+
+.detail-info .van-cell__title {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.detail-info .van-cell__value {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.action-buttons {
+  margin: 40rpx 24rpx 40rpx 24rpx;
+  display: flex;
+  gap: 20rpx;
+}
+
+.cancel-btn,
+.confirm-btn {
+  flex: 1;
+}

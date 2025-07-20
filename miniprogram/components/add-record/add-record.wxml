@@ -1,0 +1,81 @@
+<van-action-sheet show="{{ show }}" bind:close="onClose" title="{{mode === 'edit' ? '编辑账单' : '新建账单'}}">
+  <view class="action-sheet-content">
+    <!-- 类型选择和日期选择 -->
+    <view class="tabs-row">
+      <view class="type-tabs">
+        <view
+          class="tab-item {{ activeType === 'expense' ? 'active' : '' }}"
+          bind:tap="onTypeChange"
+          data-type="expense"
+        >
+          支出
+        </view>
+        <view class="tab-item {{ activeType === 'income' ? 'active' : '' }}" bind:tap="onTypeChange" data-type="income">
+          入账
+        </view>
+        <view class="tab-item {{ activeType === 'none' ? 'active' : '' }}" bind:tap="onTypeChange" data-type="none">
+          不计入收支
+        </view>
+      </view>
+
+      <view class="date-button" bind:tap="onDateSelect">
+        <van-icon name="calendar-o" size="20" />
+        <text>{{ displayDate }}</text>
+      </view>
+    </view>
+
+    <!-- 金额和备注输入 -->
+    <view class="input-group">
+      <van-field
+        value="{{ amount }}"
+        placeholder="请输入金额"
+        type="digit"
+        bind:change="onAmountChange"
+        custom-style="font-size: 28rpx;"
+        left-icon="gold-coin-o"
+        border="{{ true }}"
+      />
+      <van-field
+        value="{{ remark }}"
+        placeholder="请输入备注信息"
+        type="text"
+        bind:change="onRemarkChange"
+        custom-style="font-size: 28rpx;"
+        left-icon="edit"
+      />
+    </view>
+
+    <!-- 分类选择 -->
+    <view class="category-grid">
+      <view
+        class="category-item {{ selectedCategory === item.id ? 'active' : '' }}"
+        wx:for="{{ categories }}"
+        wx:key="id"
+        bind:tap="onCategorySelect"
+        data-category="{{ item.id }}"
+      >
+        <van-icon name="{{ item.icon }}" size="24" color="{{ selectedCategory === item.id ? '#69b982' : '#666' }}" />
+        <text>{{ item.name }}</text>
+      </view>
+    </view>
+
+    <!-- 底部按钮组 -->
+    <view class="action-buttons">
+      <van-button class="cancel-btn" round block bind:tap="onClose">取消</van-button>
+      <van-button class="confirm-btn" round block type="primary" bind:tap="onConfirm" loading="{{loading}}">
+        确认
+      </van-button>
+    </view>
+  </view>
+
+  <!-- 日期选择器 ActionSheet -->
+  <van-action-sheet show="{{ showDatePicker }}" bind:close="onDateCancel">
+    <van-datetime-picker
+      type="date"
+      value="{{ selectedDate }}"
+      bind:confirm="onDateConfirm"
+      bind:cancel="onDateCancel"
+      title="选择日期"
+    />
+  </van-action-sheet>
+</van-action-sheet>

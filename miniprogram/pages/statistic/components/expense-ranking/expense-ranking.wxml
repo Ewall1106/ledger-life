@@ -1,0 +1,32 @@
+<view>
+  <view class="section-title">{{currentMonth}}月支出排行</view>
+  <view class="ranking-container" wx:if="{{expenseRanking.length > 0}}">
+    <view class="ranking-list">
+      <view class="ranking-item" wx:for="{{displayExpenseRanking}}" wx:key="id">
+        <!-- 左侧：排名 + 图标 -->
+        <view class="ranking-left">
+          <view class="ranking-number">{{index + 1}}</view>
+          <view class="ranking-icon">
+            <van-icon name="{{item.categoryIcon}}" size="20" color="#62b37a" />
+          </view>
+        </view>
+        <!-- 中间：分类名 + 描述 -->
+        <view class="ranking-middle">
+          <text class="ranking-category">{{item.categoryName}}</text>
+          <text class="ranking-description">{{item.description}}</text>
+        </view>
+        <!-- 右侧：金额 + 日期 -->
+        <view class="ranking-right">
+          <text class="ranking-amount">-{{item.amount}}</text>
+          <text class="ranking-date">{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 全部排行按钮 -->
+    <view wx:if="{{expenseRanking.length > 10}}" class="view-all-container">
+      <van-button plain type="primary" size="small" bind:tap="onViewAllRanking" custom-class="view-all-btn">
+        全部排行
+      </van-button>
+    </view>
+  </view>
+</view> 

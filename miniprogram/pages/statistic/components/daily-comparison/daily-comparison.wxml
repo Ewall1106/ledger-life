@@ -1,0 +1,13 @@
+<view>
+  <view class="section-title">每日对比</view>
+  <view class="chart-container">
+    <ec-canvas
+      id="daily-chart"
+      canvas-id="dailyChart"
+      ec="{{ ec }}"
+      class="daily-chart"
+      force-use-old-canvas="{{true}}"
+    >
+    </ec-canvas>
+  </view>
+</view> 

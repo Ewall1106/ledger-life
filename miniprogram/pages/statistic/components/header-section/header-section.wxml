@@ -1,0 +1,25 @@
+<view class="header-section">
+  <view class="header-controls">
+    <view class="date-selector" bind:tap="onDateSelect">
+      <text class="date-text">{{currentYear}}年{{currentMonth}}月</text>
+      <van-icon name="calendar-o" size="16" color="white" />
+    </view>
+    <view class="tab-buttons">
+      <view class="tab-button {{activeTab === 'expense' ? 'active' : ''}}" data-tab="expense" bind:tap="onTabChange">支出</view>
+      <view class="tab-button {{activeTab === 'income' ? 'active' : ''}}" data-tab="income" bind:tap="onTabChange">入账</view>
+    </view>
+  </view>
+  <view class="total-amount">
+    <text class="amount-label">共支出</text>
+    <text class="amount-value">¥{{totalExpense}}</text>
+  </view>
+  <van-action-sheet show="{{showDatePicker}}" bind:close="onDateCancel">
+    <van-datetime-picker
+      type="year-month"
+      value="{{selectedDate}}"
+      bind:confirm="onDateConfirm"
+      bind:cancel="onDateCancel"
+      title="选择月份"
+    />
+  </van-action-sheet>
+</view> 

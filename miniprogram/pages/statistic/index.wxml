@@ -1,0 +1,43 @@
+<view class="container">
+  <!-- 顶部统计头部区域 -->
+  <header-section
+    currentYear="{{currentYear}}"
+    currentMonth="{{currentMonth}}"
+    activeTab="{{activeTab}}"
+    totalExpense="{{totalExpense}}"
+    selectedDate="{{selectedDate}}"
+    bind:datechange="onDateChange"
+    bind:tabchange="onTabChange"
+  />
+
+  <!-- 统计内容区（有数据时显示） -->
+  <block wx:if="{{!noData}}">
+    <!-- 支出构成模块 -->
+    <expense-composition
+      categoryStats="{{categoryStats}}"
+      displayCategories="{{displayCategories}}"
+      showAllCategories="{{showAllCategories}}"
+      bind:togglecategorylist="toggleCategoryList"
+    />
+
+    <!-- 每日对比模块 -->
+    <daily-comparison dailyStats="{{dailyStats}}" />
+
+    <!-- 月度对比模块 -->
+    <monthly-comparison monthlyStats="{{monthlyStats}}" />
+
+    <!-- 月度支出排行模块 -->
+    <expense-ranking
+      currentMonth="{{currentMonth}}"
+      expenseRanking="{{expenseRanking}}"
+      displayExpenseRanking="{{displayExpenseRanking}}"
+      bind:viewallranking="onViewAllRanking"
+    />
+  </block>
+
+  <!-- 空状态（无数据时显示） -->
+  <van-empty wx:if="{{noData && !loading}}" image="search" description="暂无统计数据" />
+
+  <!-- 全局通知 -->
+  <van-notify id="van-notify" />
+</view>

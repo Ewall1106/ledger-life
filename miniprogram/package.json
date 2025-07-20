@@ -1,0 +1,12 @@
+{
+  "name": "mini-template",
+  "version": "1.0.0",
+  "description": "https://zhuzhukeji.cn",
+  "scripts": {},
+  "keywords": [],
+  "author": "https://zhuzhukeji.cn",
+  "license": "",
+  "dependencies": {
+    "@vant/weapp": "^1.11.7"
+  }
+}

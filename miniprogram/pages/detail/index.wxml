@@ -1,0 +1,49 @@
+<view class="detail-page">
+  <van-notify id="van-notify" />
+  <van-toast id="van-toast" />
+
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="loading-container">
+    <van-loading type="spinner" size="24px" vertical>加载中...</van-loading>
+  </view>
+
+  <!-- 主要内容区 -->
+  <view wx:elif="{{billDetail}}" class="detail-content">
+    <!-- 分类和金额 -->
+    <view class="amount-section">
+      <view class="category-info">
+        <view class="category-icon">
+          <van-icon name="{{billDetail.categoryIcon}}" size="20" color="#4CAF50" />
+        </view>
+        <text class="category-name">{{billDetail.categoryName}}</text>
+      </view>
+
+      <view class="amount-display">
+        <text class="amount-text">{{billDetail.type === 'expense' ? '-' : '+'}}{{billDetail.amount}}</text>
+      </view>
+    </view>
+
+    <!-- 详情信息 -->
+    <view class="detail-info">
+      <van-cell-group border="{{false}}">
+        <van-cell title="记录时间" value="{{billDetail.dateTime}}" border="{{false}}" />
+        <van-cell title="备注" value="{{billDetail.remark}}" border="{{false}}" />
+      </van-cell-group>
+    </view>
+  </view>
+
+  <!-- 底部按钮组 -->
+  <view wx:if="{{!loading && billDetail}}" class="action-buttons">
+    <van-button class="cancel-btn" round block bind:tap="onDelete">删除</van-button>
+    <van-button class="confirm-btn" round block type="primary" bind:tap="onEdit">编辑</van-button>
+  </view>
+
+  <!-- 编辑弹窗 -->
+  <add-record 
+    show="{{showEditDialog}}"
+    mode="edit"
+    editData="{{editData}}"
+    bind:close="onEditClose"
+    bind:updated="onEditUpdated"
+  />
+</view>

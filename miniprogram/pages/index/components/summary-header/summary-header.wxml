@@ -1,0 +1,27 @@
+<view class="summary-header">
+  <view class="category-filter">
+    <view class="category-button">
+      <text class="category-text">全部类型</text>
+      <van-icon name="apps-o" size="16" color="white" />
+    </view>
+  </view>
+  <view class="monthly-summary">
+    <view class="month-selector" bind:tap="onMonthSelectorTap">
+      <text class="month-text">{{currentMonth}}</text>
+      <van-icon name="arrow-down" size="12" color="rgba(255,255,255,0.8)" />
+    </view>
+    <view class="summary-amounts">
+      <text class="summary-item">总支出 ¥{{totalExpense}}</text>
+      <text class="summary-item">总入账 ¥{{totalIncome}}</text>
+    </view>
+  </view>
+  <van-action-sheet show="{{showMonthPicker}}" bind:close="onMonthPickerCancel">
+    <van-datetime-picker
+      type="year-month"
+      value="{{selectedDate}}"
+      bind:confirm="onMonthPickerConfirm"
+      bind:cancel="onMonthPickerCancel"
+      title="选择月份"
+    />
+  </van-action-sheet>
+</view> 

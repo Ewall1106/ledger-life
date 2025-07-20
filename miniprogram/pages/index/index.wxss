@@ -1,0 +1,135 @@
+.container {
+  /* 可根据需要设置页面容器样式 */
+}
+
+.transaction-list {
+  width: 100%;
+}
+
+.transaction-group {
+  margin-top: 40rpx;
+}
+
+.date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 20rpx 15rpx;
+  margin-bottom: 0;
+  background: rgb(251, 251, 251);
+}
+
+.date-info {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.date {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #000;
+}
+
+.date-label {
+  font-size: 24rpx;
+  color: #000;
+}
+
+.daily-summary {
+  display: flex;
+  gap: 30rpx;
+  font-size: 28rpx;
+}
+
+.expense {
+  color: #000;
+}
+
+.income {
+  color: #000;
+}
+
+.item-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25rpx;
+  flex-shrink: 0;
+  background-color: #62b37a;
+}
+
+.cell-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.category-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+
+.category {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+}
+
+.amount {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-left: 20rpx;
+}
+
+.amount.expense {
+  color: #333;
+}
+
+.amount.income {
+  color: #62b37a;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+  gap: 2rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  flex-shrink: 0;
+}
+
+.separator {
+  font-size: 24rpx;
+  color: #ccc;
+  margin: 0 8rpx;
+}
+
+.description {
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.fab {
+  position: fixed !important;
+  bottom: 40rpx;
+  right: 40rpx;
+  box-shadow: 0 6rpx 16rpx rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.fab .van-button__text,
+.fab .van-icon {
+  color: #62b37a !important;
+}

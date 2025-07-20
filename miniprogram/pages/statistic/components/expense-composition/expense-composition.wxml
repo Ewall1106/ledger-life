@@ -1,0 +1,45 @@
+<view>
+  <view class="section-title">支出构成</view>
+  <view class="pie-chart-container" wx:if="{{categoryStats.length > 0}}">
+    <ec-canvas id="pie-chart" canvas-id="pieChart" ec="{{ ec }}" class="pie-chart" force-use-old-canvas="{{true}}">
+    </ec-canvas>
+  </view>
+  <van-cell-group>
+    <van-cell wx:for="{{displayCategories}}" wx:key="category" is-link border="{{false}}">
+      <view slot="icon" class="category-icon">
+        <van-icon name="{{item.categoryIcon}}" size="20" color="#62b37a" />
+      </view>
+      <view slot="title" class="category-info">
+        <view class="category-header">
+          <text class="category-name">{{item.categoryName}}</text>
+          <text class="category-percentage">{{item.percentage}}%</text>
+          <text class="category-count">{{item.count}}笔</text>
+        </view>
+        <view class="progress-bar">
+          <van-progress
+            percentage="{{item.percentage}}"
+            stroke-width="4"
+            color="#62b37a"
+            track-color="#f0f0f0"
+            show-pivot="{{false}}"
+          />
+        </view>
+      </view>
+      <view slot="value" class="category-amount">
+        <text class="amount">¥{{item.amount}}</text>
+      </view>
+    </van-cell>
+    <view wx:if="{{categoryStats.length > 5}}" class="toggle-container">
+      <van-button
+        plain
+        type="default"
+        size="small"
+        icon="{{showAllCategories ? 'arrow-up' : 'arrow-down'}}"
+        bind:tap="onToggleCategoryList"
+        custom-class="toggle-btn"
+      >
+        {{showAllCategories ? '收起' : '展开更多'}}
+      </van-button>
+    </view>
+  </van-cell-group>
+</view> 

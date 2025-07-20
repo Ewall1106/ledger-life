@@ -1,0 +1,13 @@
+<view>
+  <view class="section-title">月度对比</view>
+  <view class="chart-container">
+    <ec-canvas
+      id="monthly-chart"
+      canvas-id="monthlyChart"
+      ec="{{ ec }}"
+      class="monthly-chart"
+      force-use-old-canvas="{{true}}"
+    >
+    </ec-canvas>
+  </view>
+</view> 

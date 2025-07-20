@@ -1,0 +1,21 @@
+{
+  "navigationBarBackgroundColor": "#62b37a",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "记账本",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "add-record": "../../components/add-record/add-record",
+    "summary-header": "./components/summary-header/summary-header"
+  }
+}

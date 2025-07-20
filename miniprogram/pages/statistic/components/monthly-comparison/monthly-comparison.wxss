@@ -1,0 +1,21 @@
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  padding: 30rpx 30rpx 20rpx;
+  background: white;
+  margin-top: 20rpx;
+}
+
+.chart-container {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.monthly-chart {
+  width: 100%;
+  height: 400rpx;
+  display: block;
+} 

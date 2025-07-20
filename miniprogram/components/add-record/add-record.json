@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "账单详情",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "add-record": "../../components/add-record/add-record"
+  }
+}

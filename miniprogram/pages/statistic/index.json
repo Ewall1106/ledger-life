@@ -1,0 +1,16 @@
+{
+  "navigationBarBackgroundColor": "#62b37a",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "统计",
+  "backgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "van-notify": "@vant/weapp/notify/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "header-section": "./components/header-section/header-section",
+    "expense-composition": "./components/expense-composition/expense-composition",
+    "daily-comparison": "./components/daily-comparison/daily-comparison",
+    "monthly-comparison": "./components/monthly-comparison/monthly-comparison",
+    "expense-ranking": "./components/expense-ranking/expense-ranking"
+  }
+}

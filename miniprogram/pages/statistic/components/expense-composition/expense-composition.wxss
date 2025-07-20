@@ -1,0 +1,81 @@
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  padding: 30rpx 30rpx 20rpx;
+  background: white;
+  margin-top: 20rpx;
+}
+
+.pie-chart-container {
+  background: white;
+  padding: 20rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pie-chart {
+  width: 100%;
+  height: 450rpx;
+  display: block;
+}
+
+.category-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #f0f9ff;
+  margin-right: 20rpx;
+}
+
+.category-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+}
+
+.category-name {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.category-percentage {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.category-count {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.progress-bar {
+  width: 100%;
+}
+
+.category-amount {
+  text-align: right;
+}
+
+.category-amount .amount {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.toggle-container {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0;
+  background: white;
+} 
